@@ -1,3 +1,5 @@
+import monkeyUrl from './monkey.jpg';
+
 let count = 0;
 
 const countText = document.querySelector("#count");
@@ -12,13 +14,15 @@ button.addEventListener("click", () => {
         button.textContent = "คลิกทำไหมมมมมมมมมมมมม";
     } else if (count === 2) {
         button.textContent = "ยิ่งคลิกยิ่งเอ๋อนะ";
-    } else if (count === 67) {
-        button.textContent = "บอกแล้วว่าอย่ากดถึง 67!";
+    } else if (count >= 67) {
+        button.textContent = count === 67 
+            ? "บอกแล้วว่าอย่ากดถึง 67!" 
+            : `เกิน 67 มา ${count - 67} ครั้งแล้ว พอได้แล้ว!`;
+
         if (monkeyImg) {
-            monkeyImg.style.display = "inline-block"; // แสดงรูปลิง
+            monkeyImg.src = monkeyUrl;           // ใส่ Path รูปที่ Vite build ออกมาให้
+            monkeyImg.style.display = "inline-block"; // แสดงรูปภาพ
         }
-    } else if (count > 67) {
-        button.textContent = `เกิน 67 มา ${count - 67} ครั้งแล้ว พอได้แล้ว!`;
     } else {
         button.textContent = `บอกให้หยุดไง! (กดไป ${count} ครั้งแล้วนะ ถ้ากดถึง 67 มีอะไรให้ดู)`;
     }
