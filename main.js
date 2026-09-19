@@ -10,9 +10,9 @@ button.addEventListener("click", () => {
     if (count === 1) {
         button.textContent = "คลิกทำไหมมมมมมมมมมมมม";
     } else if (count === 2) {
-        button.textContent = "หยุดดดดดดดดดดดดด";
+        button.textContent = "ยิ่งคลิกยิ่งเอ๋อนะ";
     } else {
-        button.textContent = `บอกให้หยุดไง! (กดไป ${count} ครั้งแล้วนะ)`;
+        button.textContent = `บอกให้หยุดไง! (กดไป ${count} ครั้งแล้วนะ ถ้ากดถึง 67 มีอะไรให้ดู)`;
     }
 
     console.log("จำนวนคลิก:", count);
