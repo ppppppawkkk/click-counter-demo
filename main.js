@@ -18,6 +18,8 @@ button.addEventListener("click", () => {
             : `เกิน 67 มา ${count - 67} ครั้งแล้ว พอได้แล้ว!`;
 
         if (monkeyImg) {
+            // ดึง BASE_URL อัตโนมัติ (จะกลายเป็น /click-counter-demo/monkey.jpg)
+            monkeyImg.src = `${import.meta.env.BASE_URL}monkey.jpg`;
             monkeyImg.style.display = "inline-block";
         }
     } else {
