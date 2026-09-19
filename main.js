@@ -18,7 +18,7 @@ button.addEventListener("click", () => {
             : `เกิน 67 มา ${count - 67} ครั้งแล้ว พอได้แล้ว!`;
 
         if (monkeyImg) {
-            monkeyImg.style.display = "inline-block"; // สั่งให้แสดงรูป
+            monkeyImg.style.display = "inline-block";
         }
     } else {
         button.textContent = `บอกให้หยุดไง! (กดไป ${count} ครั้งแล้วนะ ถ้ากดถึง 67 มีอะไรให้ดู)`;
