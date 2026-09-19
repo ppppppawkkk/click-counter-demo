@@ -17,8 +17,10 @@ button.addEventListener("click", () => {
             ? "บอกแล้วว่าอย่ากดถึง 67!" 
             : `เกิน 67 มา ${count - 67} ครั้งแล้ว พอได้แล้ว!`;
 
+        // สั่งแสดงรูปเมื่อครบ 67 ครั้งขึ้นไป
         if (monkeyImg) {
-            monkeyImg.style.display = "inline-block";
+            monkeyImg.style.display = "block";
+            monkeyImg.style.margin = "20px auto 0 auto";
         }
     } else {
         button.textContent = `บอกให้หยุดไง! (กดไป ${count} ครั้งแล้วนะ ถ้ากดถึง 67 มีอะไรให้ดู)`;
