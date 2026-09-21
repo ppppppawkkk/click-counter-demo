@@ -1,21 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เว็บนับ 67</title>
+    <title>ระดับความเกย์</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <h1>เว็บนับคลิกของ บอยบี้ 67</h1>
-        <p>กดไปแล้ว <span id="count">0</span> ครั้ง</p>
-        <button id="click-button" type="button">เพิ่ม 1 ครั้ง</button>
-        
-        <div id="image-container">
-            <img id="monkey-img" src="./monkey.jpg" alt="Monkey" style="display: none; margin-top: 20px; max-width: 250px; width: 100%; border-radius: 12px;" />
+    <div class="card">
+        <!-- หน้าแรก: กรอกชื่อเพื่อน -->
+        <div id="step-start" class="step">
+            <h1>แบบทดสอบวัดระดับความเกย์</h1>
+            
+            <div class="form-group">
+                <label for="friend-name">กรุณาพิมพ์ชื่อเล่นของเกย์ (คุณอาจจะเป็นเกย์ก็ได้)</label>
+                <input type="text" id="friend-name" placeholder="เช่น เกย์บอย, เกย์ซี, เกย์ปอน..." autocomplete="off">
+            </div>
+
+            <button id="btn-start" class="btn primary">ทดสอบความเกย์ของคุณ</button>
         </div>
-    </main>
+
+        <!-- หน้าคำถามกวนๆ -->
+        <div id="step-quiz" class="step hidden">
+            <div class="quiz-header">
+                <span id="question-number">ข้อ 1/4</span>
+                <div class="progress-bar">
+                    <div id="quiz-progress" class="progress-fill" style="width: 25%"></div>
+                </div>
+            </div>
+
+            <h2 id="question-text">เวลาเพื่อนชวนไปหาดวอนตอนเที่ยงคืน คุณตอบว่า?</h2>
+            
+            <div id="options-container" class="options-grid">
+                <!-- ตัวเลือกจะถูกใส่จาก JS -->
+            </div>
+        </div>
+
+        <!-- หน้ากำลังสแกนหลอกๆ -->
+        <div id="step-scanning" class="step hidden">
+            <div class="loader-spinner"></div>
+            <h2>กำลังประมวลผลข้อมูลชีวภาพ...</h2>
+            <p id="scan-status" class="scan-text">กำลังเจาะประวัติการเข้าชมเว็บ...</p>
+            <div class="progress-bar">
+                <div id="scan-progress" class="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- หน้าเฉลย (หักมุมรูปลิง) -->
+        <div id="step-result" class="step hidden">
+            <div class="alert-gay">
+                ผลการสแกนอัตราความเกย์
+            </div>
+            
+            <h1 class="result-percent">100% (เกย์เต็มพิกัด!)</h1>
+            <p class="target-name">เหยื่อผู้เคราะห์ร้าย: <b id="display-name">คุณ</b></p>
+            
+            <div class="image-box">
+                <img id="monkey-img" src="./monkey.jpg" alt="ลิงฟักทอง">
+            </div>
+
+            <p class="prank-caption">"เกย์เกย์เกย์เกย์เกย์เกย์เกย์เกย์เกย์"</p>
+
+            <button id="btn-restart" class="btn secondary">ทดสอบความเกย์ของคุณอีกครั้ง</button>
+        </div>
+    </div>
 
     <script type="module" src="main.js"></script>
 </body>
